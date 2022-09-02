@@ -13,6 +13,7 @@ public class EtagFilterConfiguration {
         FilterRegistrationBean<ShallowEtagHeaderFilter> filterRegistrationBean =
                 new FilterRegistrationBean<>(new ShallowEtagHeaderFilter());
         filterRegistrationBean.addUrlPatterns("/etag");
+        filterRegistrationBean.addUrlPatterns("/resources/*");
         return filterRegistrationBean;
     }
 }

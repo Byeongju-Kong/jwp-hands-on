@@ -12,10 +12,11 @@ public class CacheInterceptor implements HandlerInterceptor {
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
                            ModelAndView modelAndView) throws Exception {
-        final String cacheControl = CacheControl
+        String cacheControl = CacheControl
                 .noCache()
                 .cachePrivate()
                 .getHeaderValue();
         response.addHeader(HttpHeaders.CACHE_CONTROL, cacheControl);
+
     }
 }
